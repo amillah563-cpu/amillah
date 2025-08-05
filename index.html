@@ -1,0 +1,37 @@
+html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Website Interaktif</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 20px; background: #f9f9f9; }
+    h1 { color: #0077cc; }
+    button {
+      padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; background: #0077cc; color: white;
+      cursor: pointer; margin-top: 20px;
+    }
+    button:hover { background: #005fa3; }
+  </style>
+</head>
+<body>
+  <h1>Halo, Selamat Datang!</h1>
+  <p>Klik tombol di bawah untuk ganti warna background:</p>
+  <button id="colorBtn">Ganti Warna</button>
+
+  <script>
+    const btn = document.getElementById('colorBtn');
+    btn.addEventListener('click', () => {
+      const colors = ['#f9f9f9', '#ffcccc', '#ccffcc', '#ccccff', '#fff0b3'];
+      const currentColor = document.body.style.backgroundColor;
+      let nextColor = colors[Math.floor(Math.random() * colors.length)];
+      while (nextColor === currentColor) {
+        nextColor = colors[Math.floor(Math.random() * colors.length)];
+      }
+      document.body.style.backgroundColor = nextColor;
+    });
+  </script>
+</body>
+</html>
+```
