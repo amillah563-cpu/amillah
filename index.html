@@ -4,34 +4,94 @@ html
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Website Interaktif</title>
+  <title>Fanny - Hero Mobile Legends (Skin Aspirants)</title>
   <style>
-    body { font-family: Arial; text-align: center; padding: 20px; background: #f9f9f9; }
-    h1 { color: #0077cc; }
-    button {
-      padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; background: #0077cc; color: white;
-      cursor: pointer; margin-top: 20px;
+    body {
+      background: #1a1a2e;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      text-align: center;
     }
-    button:hover { background: #005fa3; }
+    h1 {
+      color: #ff4c4c;
+      margin-bottom: 5px;
+    }
+    h2 {
+      color: #f0a500;
+      margin-top: 30px;
+    }
+    img.hero-skin {
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #ff4c4c;
+      margin: 20px 0;
+    }
+    p {
+      max-width: 600px;
+      margin: 0 auto 20px;
+      line-height: 1.5;
+      font-size: 16px;
+    }
+    button {
+      background-color: #ff4c4c;
+      border: none;
+      padding: 12px 25px;
+      color: white;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff4c4c;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #cc3a3a;
+    }
+    #tips {
+      background: #2c2c54;
+      border-radius: 10px;
+      padding: 15px;
+      max-width: 600px;
+      margin: 20px auto;
+      text-align: left;
+      display: none;
+      box-shadow: 0 0 10px #f0a500;
+    }
   </style>
 </head>
 <body>
-  <h1>Halo, Selamat Datang!</h1>
-  <p>Klik tombol di bawah untuk ganti warna background:</p>
-  <button id="colorBtn">Ganti Warna</button>
-
+  <h1>Fanny</h1>
+  <h2>Skin: Aspirants</h2>
+  <img class="hero-skin" src="https://static.mobilelegends.com/fanny_aspirants_skin_image.png" alt="Fanny Skin Aspirants" />
+  <p>
+    Fanny, sang Blade Dancer, adalah Assassin dengan mobilitas tinggi yang mematikan dengan cable-nya.  
+    Skin Aspirants memberikan tampilan stylish dengan aura futuristic merah yang keren!
+  </p>
+  <button id="showTipsBtn">Tips Main Fanny dengan Skin Aspirants</button>
+  <div id="tips">
+    <ul>
+      <li>Manfaatkan cable untuk mobilisasi cepat dan taktik mengejutkan musuh.</li>
+      <li>Prioritaskan item damage awal seperti Blade of Heptaseas untuk burst maksimal.</li>
+      <li>Jangan lupa gunakan Retribution sebagai Battle Spell untuk jungling lebih efektif.</li>
+      <li>Latih manajemen energy skill supaya kamu bisa mengeluarkan lebih banyak cable saat fight.</li>
+      <li>Waspadai hero counter seperti Eudora dan Minstithar yang bisa menghentikan mobilitasmu.</li>
+    </ul>
+  </div>
+  
   <script>
-    const btn = document.getElementById('colorBtn');
-    btn.addEventListener('click', () => {
-      const colors = ['#f9f9f9', '#ffcccc', '#ccffcc', '#ccccff', '#fff0b3'];
-      const currentColor = document.body.style.backgroundColor;
-      let nextColor = colors[Math.floor(Math.random() * colors.length)];
-      while (nextColor === currentColor) {
-        nextColor = colors[Math.floor(Math.random() * colors.length)];
+    const btn = document.getElementById('showTipsBtn');
+    const tips = document.getElementById('tips');
+    btn.onclick = () => {
+      if (tips.style.display === 'none') {
+        tips.style.display = 'block';
+        btn.textContent = 'Sembunyikan Tips';
+      } else {
+        tips.style.display = 'none';
+        btn.textContent = 'Tips Main Fanny dengan Skin Aspirants';
       }
-      document.body.style.backgroundColor = nextColor;
-    });
+    };
   </script>
 </body>
 </html>
 ```
+
